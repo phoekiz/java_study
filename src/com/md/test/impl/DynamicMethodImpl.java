@@ -16,12 +16,12 @@ import java.lang.reflect.Proxy;
  */
 public class DynamicMethodImpl {
   public static void main(String[] args) {
-    RealSubject real = new RealSubject();
-    System.out.println("real's hashcode = " + real.hashCode());
-    DynamicProxyHandler handler = new DynamicProxyHandler(real);
-    Subject subject = (Subject) Proxy.newProxyInstance(DynamicMethodImpl.class.getClassLoader(), RealSubject.class.getInterfaces(), handler);
+    Subject subject = new RealSubject();
+    System.out.println("real's hashcode = " + subject.hashCode());
+    DynamicProxyHandler handler = new DynamicProxyHandler(subject);
+     subject = (Subject) Proxy.newProxyInstance(DynamicMethodImpl.class.getClassLoader(), RealSubject.class.getInterfaces(), handler);
     System.out.println("subject's = " + subject.getClass());
-    System.out.println("real's hashcode2 = " + real.hashCode());
+    System.out.println("real's hashcode2 = " + subject.hashCode());
     subject.rent("20");
     subject.sayHello("Tom");
   }

@@ -26,6 +26,7 @@ public class DynamicProxyHandler implements InvocationHandler{
       return null;
     }
     System.out.println("before function call. Method = " + method + ", arguments = " + args.toString());
+    
     Object ret = method.invoke(subject,args);
     System.out.println("After function called.");
     return ret;
