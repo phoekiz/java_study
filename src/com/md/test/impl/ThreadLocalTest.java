@@ -34,7 +34,7 @@ class Counter{
   public void setCount(int v) {
     //System.out.println("[" + Thread.currentThread().getName() + "] Before Value = " + count);
     count=v;
-    System.out.println("[" + Thread.currentThread().getName() + "] After Value = " + count);
+    //System.out.println("[" + Thread.currentThread().getName() + "] After Value = " + count);
   }
   public int getCount(){
     return count;
